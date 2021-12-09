@@ -1,0 +1,26 @@
+.nav {
+    grid-area: n;
+    background-color: darkgoldenrod;
+
+}
+
+.item {
+    color: aliceblue;
+}
+
+.item a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+}
+
+.item a:visited {
+    color: aliceblue;
+}
+
+.item a:active {
+    color: coral;
+}
+.active {
+    color: coral;
+}
