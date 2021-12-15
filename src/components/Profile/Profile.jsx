@@ -7,7 +7,9 @@ export const Profile = (props) => {
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts posts={props.stateLocal.posts}/>
+            <MyPosts posts={props.stateLocal.posts}
+                     newPostText={props.stateLocal.newPostText}
+                     dispatch={props.dispatch}/>
         </div>
     )
 }
