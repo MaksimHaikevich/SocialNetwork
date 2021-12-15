@@ -1,18 +1,28 @@
 import s from './MyPosts.module.css'
 import {Post} from "./Post/Post";
 
-export const MyPosts = () => {
+export const MyPosts = (props) => {
+
+    let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+
+    let addPost = () => {
+        alert('ooops')
+    }
+
     return (
-        <div>
-            My posts
+        <div className={s.postsBlock}>
+            <h3>My posts</h3>
             <div>
-                <textarea></textarea>
-                <button>Add post</button>
-                <button>Remove post</button>
+                <div>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <button onClick={addPost}>Add post
+                    </button>
+                </div>
             </div>
             <div className={s.posts}>
-                <Post message='Hi, how are you?' likesCount='23'/>
-                <Post message='Hi boys' likesCount='12'/>
+                {postsElements}
 
             </div>
         </div>

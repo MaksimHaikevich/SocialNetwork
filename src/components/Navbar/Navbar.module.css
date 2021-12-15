@@ -1,26 +1,46 @@
 .nav {
     grid-area: n;
     background-color: darkgoldenrod;
-
-}
-
-.item {
-    color: aliceblue;
+    padding: 40px 40px 40px 25px;
+    border-radius: 5px;
 }
 
 .item a {
-    outline: none;
     text-decoration: none;
     padding: 2px 1px 0;
-}
-
-.item a:visited {
     color: aliceblue;
 }
 
-.item a:active {
-    color: coral;
+.item a.activeLink {
+    color: mediumpurple;
 }
-.active {
-    color: coral;
+.settings{
+    padding: 20px 0 20px 0;
 }
+.settings a{
+    text-decoration: none;
+    padding: 2px 1px 0;
+    color: aliceblue;
+    font-size: 19px;
+    font-weight: bold;
+    }
+.friendsBar {
+    padding: 20px 4px 180px 6px;
+}
+
+.friendsBar a {
+    text-decoration: none;
+    padding: 2px 1px 20px 48px;
+    color: aliceblue;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.friendsBarIcons {
+    display: flex;
+    color: aliceblue;
+    margin-top: 7px;
+
+
+}
+
