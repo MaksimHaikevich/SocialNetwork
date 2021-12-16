@@ -6,7 +6,7 @@ import {FriendBar} from "./FriendBar/FriendBar";
 
 export const Navbar = (props) => {
 
-    let friendBarElements = props.siteBar.friendBar
+    let friendBarElements = props.sideBar.friendBar
         .map(f => <FriendBar avatar={f.avatar} name={f.name}/>)
 
 

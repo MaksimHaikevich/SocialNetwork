@@ -12,11 +12,12 @@ function App(props) {
 
         <div className='app-wrapper'>
             <Header/>
-            <Navbar siteBar={props.state.siteBar}/>
+            <Navbar sideBar={props.state.sideBar}/>
             <div className='app-wrapper-content'>
                 <Routes>
                     <Route exact path='/dialogs'
-                           element={<Dialogs stateLocal={props.state.messagesPage}/>}/>
+                           element={<Dialogs stateLocal={props.state.messagesPage}
+                                             dispatch={props.dispatch}/>}/>
                     <Route exact path='/profile' element={<Profile
                         stateLocal={props.state.profilePage}
                         dispatch={props.dispatch}/>}/>

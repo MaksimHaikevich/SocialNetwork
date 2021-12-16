@@ -1,3 +1,8 @@
+import {profileReducer} from "./profileReducer";
+import {messagesReducer} from "./messagesReducer";
+import {sideBarReducer} from "./sideBarReducer";
+
+
 export let store = {
     _state: {
         profilePage: {
@@ -22,10 +27,11 @@ export let store = {
                 {id: 3, message: 'Hi Max!'},
                 {id: 4, message: 'Dania'},
                 {id: 5, message: 'Meow'},
-                {id: 6, message: 'Hi Kalhen'},
+                {id: 6, message: 'Hi Alex'},
             ],
+            newMessageBody: '',
         },
-        siteBar: {
+        sideBar: {
             friendBar: [
                 {
                     id: 1,
@@ -55,22 +61,15 @@ export let store = {
         this._callSubscriber = observer
     },
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0
-            };
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = ''
-            this._callSubscriber(this._state)
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-
-            this._state.profilePage.newPostText = action.newText
-            this._callSubscriber(this._state)
-        }
-
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.messagesPage = messagesReducer(this._state.messagesPage, action)
+        this._state.sideBar = sideBarReducer(this._state.sideBar, action)
+        this._callSubscriber(this._state)
     },
 }
+
+
+
+
 
 window.store = store;
