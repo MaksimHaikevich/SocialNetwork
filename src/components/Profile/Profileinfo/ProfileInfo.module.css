@@ -6,3 +6,9 @@
     width: 1200px;
     height: 300px
 }
+.info{
+    display: flex;
+}
+.description{
+    margin-left: 40px;
+}
