@@ -1,47 +1,27 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    follow,
+    follow, getUsers,
     setCurrentPage,
-    setFetching,
-    setTotalUsersCount,
-    setUsers,
+    setFollowingProgress,
     unfollow
 } from "../../redux/usersReducer";
 import {Users} from "./Users";
 import {Preloader} from "../common/Preloader/Preloader";
-import {usersAPI} from "../../api/api";
 
 
 export class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.setFetching(true);
-        usersAPI.getUsers(this.props.currentPage, this.props.pageSize)
-            .then(data => {
-                this.props.setFetching(false)
-                this.props.setUsers(data.items)
-                this.props.setTotalUsersCount(data.totalCount)
-
-            })
+        this.props.getUsers(this.props.currentPage, this.props.pageSize)
     }
 
     onPageChanged = (pageNumber) => {
-        this.props.setFetching(true)
-        this.props.setCurrentPage(pageNumber)
-
-        usersAPI.getUsers(pageNumber, this.props.pageSize)
-            .then(data => {
-                this.props.setFetching(false)
-                this.props.setUsers(data.items)
-
-            })
+        this.props.getUsers(pageNumber, this.props.pageSize)
     }
 
 
     render() {
-        debugger
-
 
         return <>
             {this.props.isFetching ? <Preloader/> : null}
@@ -51,6 +31,8 @@ export class UsersContainer extends React.Component {
                    onPageChanged={this.onPageChanged}
                    follow={this.props.follow}
                    unfollow={this.props.unfollow}
+                   setFollowingProgress={this.props.setFollowingProgress}
+                   followingProgress={this.props.followingProgress}
             />
         </>
     }
@@ -64,10 +46,15 @@ let mapStateTtoProps = (state) => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
+        followingProgress: state.usersPage.followingProgress
 
     }
 
 }
 
 export default connect(mapStateTtoProps,
-    {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, setFetching})(UsersContainer)
+    {
+        follow, unfollow,
+        setCurrentPage,
+        setFollowingProgress, getUsers
+    })(UsersContainer)
