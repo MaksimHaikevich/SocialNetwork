@@ -15,3 +15,8 @@ textarea:focus{
 .formControl.error span {
     color: red;
 }
+.formSummaryError{
+    border: red 2px solid;
+    padding: 5px;
+    color: darkred;
+}

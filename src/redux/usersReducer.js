@@ -79,11 +79,13 @@ export const setFollowingProgress = (followingProgress, userId) => ({
 })
 
 
-export const getUsers = (currentPage, pageSize) => {
+export const getUsers = (page, pageSize) => {
     return (dispatch) => {
 
         dispatch(setFetching(true));
-        usersAPI.getUsers(currentPage, pageSize)
+        dispatch(setCurrentPage(page))
+
+        usersAPI.getUsers(page, pageSize)
             .then(data => {
                 dispatch(setFetching(false));
                 dispatch(setUsers(data.items));

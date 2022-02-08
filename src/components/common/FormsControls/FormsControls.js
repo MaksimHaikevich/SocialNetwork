@@ -3,7 +3,6 @@ import s from './FormsControls.module.css'
 
 
 const FormControl = ({input, meta, child, ...props}) => {
-debugger
     const hasError = meta.touched && meta.error
 
     return (
