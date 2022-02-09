@@ -1,38 +1,31 @@
 import React from "react";
 import s from './ProfileInfo.module.css'
 import {Preloader} from "../../common/Preloader/Preloader";
-import {ProfileStatus} from "./ProfileStatus/ProfileStatus";
-import {updateStatus} from "../../../redux/profileReducer";
+import {ProfileStatusWithHooks} from "./ProfileStatus/ProfileStatusWithHooks";
 
-export const ProfileInfo = (props) => {
-    if (!props.profile) {
+export const ProfileInfo = ({profile,status,updateStatus}) => {
+    if (!profile) {
         return <Preloader/>
 
     }
 
-
     return (
         <div>
-            {/*<div className={s.wallpaper}>*/}
-            {/*    <img*/}
-            {/*        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Prague_skyline_at_dawn.jpg/1200px-Prague_skyline_at_dawn.jpg"*/}
-            {/*        alt=""/>*/}
-            {/*</div>*/}
             <div className={s.info}>
                 <div className={s.descriptionBlock}>
                     <img
-                        src={props.profile.photos.large || 'https://transplant.org.au/wp-content/uploads/2018/06/James-avatar-for-website-300x300.png'}
+                        src={profile.photos.large || 'https://transplant.org.au/wp-content/uploads/2018/06/James-avatar-for-website-300x300.png'}
                         alt=""/>
                 </div>
                 <div className={s.description}>
-                    <p>{props.profile.fullName.toUpperCase()}</p>
-                    <p>{props.profile.aboutMe}</p>
-                    <p><strong><ProfileStatus updateStatus={props.updateStatus}
-                                                      status={props.status}/></strong> </p>
+                    <p>{profile.fullName.toUpperCase()}</p>
+                    <p>{profile.aboutMe}</p>
+                    <p><strong><ProfileStatusWithHooks updateStatus={updateStatus}
+                                                       status={status}/></strong></p>
                     <div>
-                        <p>Статус поиска: <strong>{props.profile.lookingForAJob ? 'В поиске работы' : 'Не ищу'}</strong>
+                        <p>Статус поиска: <strong>{profile.lookingForAJob ? 'В поиске работы' : 'Не ищу'}</strong>
                         </p>
-                        <p>{props.profile.lookingForAJobDescription}</p>
+                        <p>{profile.lookingForAJobDescription}</p>
                     </div>
 
                 </div>
