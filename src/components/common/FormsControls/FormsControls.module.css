@@ -1,4 +1,3 @@
-
 /*.formControl{*/
 /*    padding: 10px;*/
 /*}*/
@@ -8,14 +7,16 @@
     border: 2px red solid;
 
 }
-textarea:focus{
+
+textarea:focus {
     outline: none;
 }
 
 .formControl.error span {
     color: red;
 }
-.formSummaryError{
+
+.formSummaryError {
     border: red 2px solid;
     padding: 5px;
     color: darkred;

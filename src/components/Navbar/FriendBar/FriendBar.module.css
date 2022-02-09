@@ -2,6 +2,7 @@
     width: 60px;
     height: 60px;
 }
+
 .avatar img {
     width: 35px;
     height: 35px;
@@ -10,7 +11,7 @@
 }
 
 .names {
-    padding:0 5px 0 0;
+    padding: 0 5px 0 0;
 }
 
 

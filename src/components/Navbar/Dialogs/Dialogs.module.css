@@ -7,11 +7,12 @@
     padding: 10px;
 
 }
+
 .dialogsItems .active {
     color: coral;
 }
 
-.dialogsItems .dialog a{
+.dialogsItems .dialog a {
     text-decoration: none;
 }
 

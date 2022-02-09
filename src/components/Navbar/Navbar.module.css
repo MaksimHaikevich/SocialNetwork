@@ -14,16 +14,19 @@
 .item a.activeLink {
     color: mediumpurple;
 }
-.settings{
+
+.settings {
     padding: 20px 0 20px 0;
 }
-.settings a{
+
+.settings a {
     text-decoration: none;
     padding: 2px 1px 0;
     color: aliceblue;
     font-size: 19px;
     font-weight: bold;
-    }
+}
+
 .friendsBar {
     padding: 20px 4px 180px 6px;
 }

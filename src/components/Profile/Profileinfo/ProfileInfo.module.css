@@ -1,14 +1,17 @@
-.descriptionBlock{
+.descriptionBlock {
     padding: 10px;
 }
+
 .wallpaper img {
     padding: 5px;
     width: 1200px;
     height: 300px
 }
-.info{
+
+.info {
     display: flex;
 }
-.description{
+
+.description {
     margin-left: 40px;
 }
