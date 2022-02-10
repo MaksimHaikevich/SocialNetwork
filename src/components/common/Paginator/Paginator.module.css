@@ -1,16 +1,35 @@
 .pagesWrapper {
-    padding: 20px;
+    padding: 29px 28px 35px 10px;
     font-size: 20px;
 }
 
 .selectedPage {
     cursor: pointer;
     font-weight: bold;
-    padding: 5px 2px 0 2px;
+    padding: 5px 44px 0 2px;
 }
 
 .page {
     cursor: pointer;
-    padding: 5px 2px 0 2px;
+    padding: 5px 44px 0 2px;
     margin-bottom: 100px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+.prevButton {
+    margin-right: 30px;
+}
+
+.nextButton .prevButton {
+    text-decoration: none;
+
 }

@@ -10,13 +10,15 @@ export const Users = ({
   follow,
   unfollow,
   users,
+  pageSize,
 }) => {
   return (
     <div>
       <Paginator
         currentPage={currentPage}
         onPageChanged={onPageChanged}
-        totalUsersCount={totalUsersCount}
+        totalItemsCount={totalUsersCount}
+        pageSize={pageSize}
       />
       <div>
         {users.map((u) => (

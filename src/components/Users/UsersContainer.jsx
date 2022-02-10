@@ -43,6 +43,7 @@ export class UsersContainer extends React.Component {
           follow={this.props.follow}
           unfollow={this.props.unfollow}
           followingProgress={this.props.followingProgress}
+          pageSize={this.props.pageSize}
         />
       </>
     );
