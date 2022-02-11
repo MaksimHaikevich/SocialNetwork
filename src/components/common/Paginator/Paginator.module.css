@@ -15,21 +15,15 @@
     margin-bottom: 100px;
 }
 
-a {
-    outline: none;
-    text-decoration: none;
-    color: black;
-}
-
-a:visited {
-    color: black;
-}
 
 .prevButton {
     margin-right: 30px;
 }
 
-.nextButton .prevButton {
-    text-decoration: none;
+.nextButton, .prevButton {
+    background: #fffaf0;
+    border: 0;
+    cursor: pointer;
+    font-size: 18px;
 
 }

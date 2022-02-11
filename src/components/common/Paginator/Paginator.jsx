@@ -13,7 +13,7 @@ export const Paginator = ({
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
-
+  debugger;
   let portionCount = Math.ceil(pagesCount / portionSize);
   let [portionNumber, setPortionNumber] = useState(1);
   let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
@@ -23,15 +23,14 @@ export const Paginator = ({
     <div>
       <div className={s.pagesWrapper}>
         {portionNumber > 1 && (
-          <a
-            href="#"
+          <button
             className={s.prevButton}
             onClick={() => {
               setPortionNumber(portionNumber - 1);
             }}
           >
             {"<<"}
-          </a>
+          </button>
         )}
 
         {pages
@@ -52,15 +51,14 @@ export const Paginator = ({
             );
           })}
         {portionCount > portionNumber && (
-          <a
-            href="#"
+          <button
             className={s.nextButton}
             onClick={() => {
               setPortionNumber(portionNumber + 1);
             }}
           >
             >>
-          </a>
+          </button>
         )}
       </div>
     </div>
